@@ -1,10 +1,9 @@
+<!DOCTYPE html>
 <?php
 	require_once ("movieQuery.php");
 	include_once("others/header.html");
 	include_once("others/menuOperations.php");
 ?>
-
-<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -22,7 +21,7 @@
 					電影名稱:
 					<input placeholder="請輸入電影名稱" name="att1" style = "width:150px;height:20px">
 					時長:
-					<input placeholder="無下限" name="att2" style = "width:60px;height:20px">~<input placeholder="無上限" name="att3" style = "width:60px;height:20px">
+					<input placeholder="0" name="att2" style = "width:60px;height:20px">~<input placeholder="無上限" name="att3" style = "width:60px;height:20px">
 					類型:
 					<input placeholder="請輸入類型" name="att4" style = "width:100px;height:20px">
 					評分:
@@ -31,7 +30,7 @@
 					<input placeholder="請輸入年齡" name="att7" style = "width:100px;height:20px">
 					<br></br>
 					預算:
-					<input placeholder="無下限" name="att8" style = "width:60px;height:20px">~<input placeholder="無上限" name="att9" style = "width:60px;height:20px">
+					<input placeholder="0" name="att8" style = "width:60px;height:20px">~<input placeholder="無上限" name="att9" style = "width:60px;height:20px">
 					導演:
 					<input placeholder="請輸入導演名子" name="att10" style = "width:150px;height:20px">
 					國家:

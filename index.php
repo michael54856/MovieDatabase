@@ -1,10 +1,9 @@
+<!DOCTYPE HTML>
 <?php
 	require_once ("movieQuery.php");
 	include_once("others/header.html");
 	include_once("others/menuOperations.php");
 ?>
-
-<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">

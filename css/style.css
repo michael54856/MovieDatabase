@@ -39,6 +39,7 @@
   line-height: 30px;
   border-bottom: 1px solid #777;
   list-style-type: none;
+  cursor: pointer;
 }
 
 .sub li:hover {
@@ -107,7 +108,7 @@ body {
   background-color: #abbcda;
 }
 
-/* table setup */
+/* table setup  */
 table {
   border: 0;
   border-collapse: collapse;
@@ -137,6 +138,7 @@ table td a {
   text-decoration: none;
 }
 
+
 table td a:hover {
   color: #003c9d;
   background-color: #fff;
@@ -150,6 +152,7 @@ tr:nth-child(even) {
 tr:nth-child(odd) {
   background-color: #fff;
 }
+
 
 /* form center */
 .flex {
@@ -239,4 +242,20 @@ tr:nth-child(odd) {
   color: white;
   background-image: linear-gradient(to bottom, #000000, #2c3f5f);
   font-weight: bold;
+}
+
+html {
+  overflow: -moz-hidden-unscrollable;
+  height: 100%;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;
+  height: 100%;
+  width: calc(100vw + 18px);
+  overflow: auto;
 }
