@@ -36,6 +36,9 @@
           $("#second").click(function(){
             window.location.href = "actorFind_First.php";
           })
+          $("#third").click(function(){
+            window.location.href = "directorFind_First.php";
+          })
 
           $("#firstSub li").click(function(){
             if(this.id == 1){
@@ -52,6 +55,15 @@
             }
             if(this.id == 2){
               window.location.href = "actorFind_First.php";
+            }
+          })
+
+          $("#thirdSub li").click(function(){
+            if(this.id == 1){
+              window.location.href = "directorFind_First.php";
+            }
+            if(this.id == 2){
+              window.location.href = "directorFind_First.php";
             }
           })
 

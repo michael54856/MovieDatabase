@@ -13,7 +13,7 @@
 		t1 as (SELECT id as countryID, name as countryName from countries WHERE name like '%$a[4]%'),
 		t2 as (SELECT id,name,gender,countryName FROM actors,t1 WHERE name LIKE '%$a[1]%' and gender like '%$a[3]%' and nationality_id = t1.countryID),
 		t3 as (SELECT DISTINCT actor_id from castings,movies WHERE movies.name like '%$a[2]%' and movies.id = castings.movie_id)
-		SELECT id,name,gender,countryName FROM t2,t3 WHERE t2.id = actor_id;";
+		SELECT id,name,gender,countryName FROM t2,t3 WHERE t2.id = actor_id ORDER BY countryName;";
 
 		$finalStr = "";
 
