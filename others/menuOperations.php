@@ -78,7 +78,7 @@
               window.location.href = "studioFind_First.php";
             }
             if(this.id == 2){
-              window.location.href = "studioFind_First.php";
+              window.location.href = "studioInsert_First.php";
             }
           })
 
