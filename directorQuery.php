@@ -21,11 +21,18 @@
 			$result = mysqli_query($link,$sql) or die("Bad query : $sql");
 			$finalStr .= "<table><thead><tr><th>導演名稱</th><th>性別</th><th>工作室</th><th>執導的電影</th></tr></thead>";
 			$finalStr .= "<tbody>";
+			
+			
 			while($row = mysqli_fetch_array($result))
 			{
-				$sql_2 = "SELECT name FROM movies WHERE id={$row['id']} and name like '%{$a[2]}%'";
+				$sql_2 = "SELECT name FROM movies WHERE director_id={$row['id']} and name like '%{$a[2]}%'";
 				$result_Movie = mysqli_query($link,$sql_2) or die("Bad query : $sql_2");
 				$firstMovie = true;
+				$haveMovie = false;
+				if($a[2] == "")
+				{
+					$haveMovie = true;
+				}
 				$movieStr = "";
 				while($row_Movie = mysqli_fetch_array($result_Movie))
 				{
@@ -38,13 +45,14 @@
 					{
 						$movieStr .= ",";
 						$movieStr .= $row_Movie['name'];
-
 					}
+					$haveMovie = true;
 				}
-				if($firstMovie == false)
+				if($haveMovie == true)
 				{
 					$finalStr .= "<tr><td>{$row['directorName']}</td><td>{$row['gender']}</td><td>{$row['studioName']}</td><td>{$movieStr}</td></tr>\n";
 				}
+				
 				
 			}
 			$finalStr .= "</tbody>";

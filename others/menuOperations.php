@@ -39,6 +39,12 @@
           $("#third").click(function(){
             window.location.href = "directorFind_First.php";
           })
+          $("#fourth").click(function(){
+            window.location.href = "studioFind_First.php";
+          })
+          $("#fifth").click(function(){
+            window.location.href = "commentFind_First.php";
+          })
 
           $("#firstSub li").click(function(){
             if(this.id == 1){
@@ -64,6 +70,24 @@
             }
             if(this.id == 2){
               window.location.href = "directorFind_First.php";
+            }
+          })
+
+          $("#fourthSub li").click(function(){
+            if(this.id == 1){
+              window.location.href = "studioFind_First.php";
+            }
+            if(this.id == 2){
+              window.location.href = "studioFind_First.php";
+            }
+          })
+
+          $("#fifthSub li").click(function(){
+            if(this.id == 1){
+              window.location.href = "commentFind_First.php";
+            }
+            if(this.id == 2){
+              window.location.href = "commentFind_First.php";
             }
           })
 
