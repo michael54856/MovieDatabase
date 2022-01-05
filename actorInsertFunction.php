@@ -1,19 +1,25 @@
 <?php
-	function InsertStudioContent()
+	function InsertActorContent()
 	{
 		$host = 'localhost';
 		$dbuser ='root';
 		$dbpassword = '';
 		$dbname = 'moviedatabase';
 		$link = mysqli_connect($host,$dbuser,$dbpassword,$dbname);
-		$a=array($_POST["insert_studio_att1"]);
+		$a=array($_POST["insert_actor_att1"],$_POST["insert_actor_att1"],$_POST["insert_actor_att2"],$_POST["insert_actor_att3"]);
 
 		
-		$sql = "INSERT INTO studios (name) VALUES ('{$a[0]}');";
+		$sql = "";
 
-		if($a[0] == "")
+		if($a[1] == "")
 		{
-			echo "請輸入工作室名字";
+			echo "請輸入演員名字";
+			return "";
+		}
+
+		if($a[3] == "")
+		{
+			echo "請輸入國家名字";
 			return "";
 		}
 
@@ -21,16 +27,18 @@
 
 		if($link)
 		{
-			$sql2 = "SELECT * from studios WHERE name = '{$a[0]}';";
+			$sql2 = "SELECT * from countries WHERE name = '{$a[3]}';";
 			$result_2 = mysqli_query($link,$sql2) or die("Bad query : $sql2");
-			$haveSame = false;
+			$haveCountry = false;
 			if($row = mysqli_fetch_array($result_2))
 			{
-				$haveSame = true;
+				$sql = "INSERT INTO actors (name,gender,nationality_id) VALUES ('{$a[1]}','{$a[2]}',{$row['id']});";
+				$haveCountry = true;
 			}
-			if($haveSame == true)
+			
+			if($haveCountry == false)
 			{
-				echo "該工作室已存在!";
+				echo "國家不存在!";
 			}
 			else
 			{

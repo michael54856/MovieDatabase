@@ -244,6 +244,7 @@ tr:nth-child(odd) {
   font-weight: bold;
 }
 
+
 html {
   overflow: -moz-hidden-unscrollable;
   height: 100%;

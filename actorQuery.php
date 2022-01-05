@@ -11,9 +11,10 @@
 		
 		$sql = "WITH
 		t1 as (SELECT id as countryID, name as countryName from countries WHERE name like '%$a[4]%'),
-		t2 as (SELECT id,name,gender,countryName FROM actors,t1 WHERE name LIKE '%$a[1]%' and gender like '%$a[3]%' and nationality_id = t1.countryID),
-		t3 as (SELECT DISTINCT actor_id from castings,movies WHERE movies.name like '%$a[2]%' and movies.id = castings.movie_id)
-		SELECT id,name,gender,countryName FROM t2,t3 WHERE t2.id = actor_id ORDER BY countryName;";
+		t2 as (SELECT id,name,gender,countryName FROM actors,t1 WHERE name LIKE '%$a[1]%' and gender like '%$a[3]%' and nationality_id = t1.countryID)
+		SELECT * FROM t2 ORDER BY countryName;";
+	
+		
 
 		$finalStr = "";
 
@@ -27,6 +28,11 @@
 				$sql_2 = "WITH t1 as (SELECT movie_id FROM castings WHERE actor_id = {$row['id']}) SELECT name FROM movies,t1 WHERE id=movie_id;";
 				$result_Movie = mysqli_query($link,$sql_2) or die("Bad query : $sql_2");
 				$firstMovie = true;
+				$haveMovie = false;
+				if($a[2] == "")
+				{
+					$haveMovie = true;
+				}
 				$movieStr = "";
 				while($row_Movie = mysqli_fetch_array($result_Movie))
 				{
@@ -41,8 +47,16 @@
 						$movieStr .= $row_Movie['name'];
 
 					}
+					if(strpos($row_Movie['name'], $a[2]) !== false)
+					{
+						$haveMovie = true;
+					}
 				}
-				$finalStr .= "<tr><td>{$row['name']}</td><td>{$row['gender']}</td><td>{$row['countryName']}</td><td>{$movieStr}</td></tr>\n";
+				if($haveMovie == true)
+				{
+					$finalStr .= "<tr><td>{$row['name']}</td><td>{$row['gender']}</td><td>{$row['countryName']}</td><td>{$movieStr}</td></tr>\n";
+				}
+				
 			}
 			$finalStr .= "</tbody>";
        		$finalStr .= "</table>";

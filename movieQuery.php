@@ -102,7 +102,11 @@
 						$row_Rate = mysqli_fetch_array($result_Rate);
 						$Rate = (float)$row_Rate['rate'];
 						$Rate = round($Rate, 2);
-						$finalStr .= "<tr><td>{$row['name']}</td><td>{$row['type']}</td><td>{$row['directorName']}</td><td>{$row['countryName']}</td><td>{$row['age_limit']}</td><td>{$row['budget']}</td><td>{$row['release_date']}</td><td>{$row['length']}</td><td>{$Rate}</td><td>{$awardStr}</td></tr>\n";
+						if($Rate >= $a[6] && $Rate <= $a[7])
+						{
+							$finalStr .= "<tr><td>{$row['name']}</td><td>{$row['type']}</td><td>{$row['directorName']}</td><td>{$row['countryName']}</td><td>{$row['age_limit']}</td><td>{$row['budget']}</td><td>{$row['release_date']}</td><td>{$row['length']}</td><td>{$Rate}</td><td>{$awardStr}</td></tr>\n";
+						}
+						
 					}
 					
 				}

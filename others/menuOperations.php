@@ -60,7 +60,7 @@
               window.location.href = "actorFind_First.php";
             }
             if(this.id == 2){
-              window.location.href = "actorFind_First.php";
+              window.location.href = "actorInsert_First.php";
             }
           })
 
@@ -69,7 +69,7 @@
               window.location.href = "directorFind_First.php";
             }
             if(this.id == 2){
-              window.location.href = "directorFind_First.php";
+              window.location.href = "directorInsert_First.php";
             }
           })
 
@@ -87,7 +87,7 @@
               window.location.href = "commentFind_First.php";
             }
             if(this.id == 2){
-              window.location.href = "commentFind_First.php";
+              window.location.href = "commentInsert_First.php";
             }
           })
 
