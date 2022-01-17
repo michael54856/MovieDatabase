@@ -17,7 +17,7 @@
 			$a[4] = "10";
 		}
 		
-		$sql = "SELECT reviewerName,rate,movies.name as movieName
+		$sql = "SELECT reviews.id as reviewID,reviewerName,rate,movies.name as movieName
 		from reviews,movies
 		WHERE reviews.movie_id = movies.id and reviews.rate BETWEEN {$a[3]} and {$a[4]} and reviews.reviewerName LIKE '%{$a[1]}%' and movies.name LIKE '%{$a[2]}%'";
 
@@ -26,11 +26,11 @@
 		if($link)
 		{
 			$result = mysqli_query($link,$sql) or die("Bad query : $sql");
-			$finalStr .= "<table><thead><tr><th>評論者</th><th>評分</th><th>評論的電影</th></tr></thead>";
+			$finalStr .= "<table><thead><tr style='background-color:#619af5;'><th style=\"width: 4vw\">刪除</th><th>評論者</th><th>評分</th><th>評論的電影</th></tr></thead>";
 			$finalStr .= "<tbody>";
 			while($row = mysqli_fetch_array($result))
 			{
-				$finalStr .= "<tr><td>{$row['reviewerName']}</td><td>{$row['rate']}</td><td>{$row['movieName']}</td></tr>\n";
+				$finalStr .= "<tr><td><input style=\"width:40px; height:40px\" type=\"button\" name=\"{$row['reviewID']}\" value=\"刪除\" onclick=\"deleteRow(this)\"></td><td>{$row['reviewerName']}</td><td>{$row['rate']}</td><td>{$row['movieName']}</td></tr>\n";
 			}
 			$finalStr .= "</tbody>";
        		$finalStr .= "</table>";

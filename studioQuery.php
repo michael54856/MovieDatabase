@@ -16,7 +16,7 @@
 		if($link)
 		{
 			$result = mysqli_query($link,$sql) or die("Bad query : $sql");
-			$finalStr .= "<table><thead><tr><th>工作室名稱</th><th>導演</th><th>發行的電影</th></tr></thead>";
+			$finalStr .= "<table><thead><tr style='background-color:#619af5;'><th style=\"width: 4vw\">刪除</th><th>工作室名稱</th><th>導演</th><th>發行的電影</th></tr></thead>";
 			$finalStr .= "<tbody>";
 			while($row = mysqli_fetch_array($result))
 			{
@@ -49,7 +49,8 @@
 						}
 						else
 						{
-							$movieStr .= ",";
+							//$movieStr .= ",";
+							$movieStr .= "<br>";
 							$movieStr .= $row_Movie['name'];
 						}
 						if(strpos($row_Movie['name'], $a[2]) !== false)
@@ -64,8 +65,9 @@
 						$firstDirector = false;
 					}
 					else
-					{
-						$directorStr .= ",";
+					{	
+						$directorStr .= "<br>";
+						//$directorStr .= ",";
 						$directorStr .= $row_Director['name'];
 					}
 					if(strpos($row_Director['name'], $a[3]) !== false)
@@ -77,7 +79,7 @@
 				
 				if($haveDirector == true && $haveMovie == true)
 				{
-					$finalStr .= "<tr><td>{$row['name']}</td><td>{$directorStr}</td><td>{$movieStr}</td></tr>\n";
+					$finalStr .= "<tr><td><input style=\"width:40px; height:40px\" type=\"button\" name=\"{$row['id']}\" value=\"刪除\" onclick=\"deleteRow(this)\"><td>{$row['name']}</td><td>{$directorStr}</td><td>{$movieStr}</td></tr>\n";
 				}
 				
 				

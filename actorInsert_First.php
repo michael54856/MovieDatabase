@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php
+	include_once("check.php");
 	require_once ("actorInsertFunction.php");
 	include_once("others/header.html");
 	include_once("others/menuOperations.php");
@@ -16,27 +17,33 @@
 		<!-- 查詢-->
 		
 		<div align="center" id="searchTable" >
-			<form action="actorInsert_Second.php" method="post" id="actorTableButton">
+			<form action="actorInsert_First.php" method="post" id="actorTableButton">
 				<div class="display: inline;">
-					演員名子:
-					<input placeholder="請輸入演員名子" name="insert_actor_att1" style = "width:150px;height:20px">
-					性別:
-					<select name="insert_actor_att2">
+					<table style="width: 40vw">
+					<tr><th style="width: 20vw">演員姓名:</th>
+					<th><input placeholder="請輸入演員姓名" name="insert_actor_att1" style = "width:150px;height:20px"></th></tr>
+					<tr><th style="width: 20vw">性別:</th>
+					<th><select name="insert_actor_att2">
 						<option value="M" selected>male</option>
 						<option value="F">female</option>
-					</select>
-					國籍:
-					<input placeholder="請輸入國家名子" name="insert_actor_att3" style = "width:150px;height:20px">
+					</select></th></tr>
+					<tr><th style="width: 20vw">國籍:</th>
+					<th><input placeholder="請輸入國家名子" name="insert_actor_att3" style = "width:150px;height:20px"></th></tr>
+						<tr><th colspan=2><input type="submit" name="Search" value="新增演員資料"></th></tr>
+					</table>
 				</div>
-				<br></br>
-				<input type="submit">
 			</form>
 		</div>
 
 		<br></br>
 		<!--結果表格-->
 		<div align="center" id="myTable">
-			
+		<?php 
+				if(isset($_POST['Search'])){
+					echo InsertActorContent(); 
+				}
+				
+			?>
 		</div>
 		<!--結果表格-->
 		

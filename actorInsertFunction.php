@@ -29,22 +29,28 @@
 		{
 			$sql2 = "SELECT * from countries WHERE name = '{$a[3]}';";
 			$result_2 = mysqli_query($link,$sql2) or die("Bad query : $sql2");
-			$haveCountry = false;
+
 			if($row = mysqli_fetch_array($result_2))
 			{
-				$sql = "INSERT INTO actors (name,gender,nationality_id) VALUES ('{$a[1]}','{$a[2]}',{$row['id']});";
-				$haveCountry = true;
-			}
-			
-			if($haveCountry == false)
-			{
-				echo "國家不存在!";
+				$sql3 = "SELECT * from actors WHERE name = '{$a[1]}'";
+				$result_3 = mysqli_query($link,$sql3) or die("Bad query : $sql3");
+				if($row3 = mysqli_fetch_array($result_3))
+				{
+					echo "演員已存在!";
+				}
+				else
+				{
+					$sql = "INSERT INTO actors (name,gender,nationality_id) VALUES ('{$a[1]}','{$a[2]}',{$row['id']});";
+					$result = mysqli_query($link,$sql) or die("Bad query : $sql");
+					echo "新增成功!";
+				}
+				
 			}
 			else
 			{
-				$result = mysqli_query($link,$sql) or die("Bad query : $sql");
-				echo "新增成功!";
+				echo "國家不存在!";
 			}
+
 			
 		}
 		else 

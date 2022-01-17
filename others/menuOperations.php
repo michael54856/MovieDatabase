@@ -6,8 +6,10 @@
           "導演",
           "工作室",
           "評論",
+          "Casting",
+          "獎項"
         ];
-        var newtext = ["Movie","Actor", "Director", "Studio", "Comment"];
+        var newtext = ["Movie","Actor", "Director", "Studio", "Comment","Casting","Award"];
 
         for (i = 0; i < $(".main").length; i++) {
           $(".sub").slideUp(0); //not sure
@@ -44,6 +46,12 @@
           })
           $("#fifth").click(function(){
             window.location.href = "commentFind_First.php";
+          })
+          $("#sixth").click(function(){
+            window.location.href = "castingFind_First.php";
+          })
+          $("#seventh").click(function(){
+            window.location.href = "awardFind_First.php";
           })
 
           $("#firstSub li").click(function(){
@@ -88,6 +96,24 @@
             }
             if(this.id == 2){
               window.location.href = "commentInsert_First.php";
+            }
+          })
+
+          $("#sixthSub li").click(function(){
+            if(this.id == 1){
+              window.location.href = "castingFind_First.php";
+            }
+            if(this.id == 2){
+              window.location.href = "castingInsert_First.php";
+            }
+          })
+
+          $("#seventhSub li").click(function(){
+            if(this.id == 1){
+              window.location.href = "awardFind_First.php";
+            }
+            if(this.id == 2){
+              window.location.href = "awardInsert_First.php";
             }
           })
 

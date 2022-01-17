@@ -19,7 +19,7 @@
   text-align: center;
   height: 50px;
   line-height: 50px;
-  width: 20vw;
+  width: 14.28vw;
 }
 .main:hover {
   background-color: #283b42;
@@ -30,7 +30,7 @@
   font-family: 微軟正黑體;
   font-weight: bold;
   text-align: center;
-  width: 20vw;
+  width: 14.28vw;
   cursor: pointer;
 }
 
@@ -114,8 +114,8 @@ table {
   border-collapse: collapse;
   border-radius: 8px;
   width: 100%;
-  table-layout: fixed;
-  word-wrap: break-word;
+  /*table-layout: fixed;
+  word-wrap: break-word;*/
 }
 th {
   border: solid 1px #abbcda;
@@ -128,6 +128,7 @@ td {
   color: #283b42;
   font-size: 16px;
   font-family: 微軟正黑體;
+  /*width: auto;*/
 }
 table td a {
   background-color: #283b42;
@@ -137,7 +138,6 @@ table td a {
   font-weight: bold;
   text-decoration: none;
 }
-
 
 table td a:hover {
   color: #003c9d;
@@ -152,7 +152,6 @@ tr:nth-child(even) {
 tr:nth-child(odd) {
   background-color: #fff;
 }
-
 
 /* form center */
 .flex {
@@ -243,7 +242,6 @@ tr:nth-child(odd) {
   background-image: linear-gradient(to bottom, #000000, #2c3f5f);
   font-weight: bold;
 }
-
 
 html {
   overflow: -moz-hidden-unscrollable;

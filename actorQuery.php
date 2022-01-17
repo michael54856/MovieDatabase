@@ -21,7 +21,7 @@
 		if($link)
 		{
 			$result = mysqli_query($link,$sql) or die("Bad query : $sql");
-			$finalStr .= "<table><thead><tr><th>演員名稱</th><th>性別</th><th>國籍</th><th>演過的電影</th></tr></thead>";
+			$finalStr .= "<table><thead><tr style='background-color:#619af5;'><th style=\"width: 5vw\">刪除</th><th style='width:20vw;'>演員名稱</th><th style='width:5vw;'>性別</th><th style='width:10vw;'>國籍</th><th style='width:60vw;'>演過的電影</th></tr></thead>";
 			$finalStr .= "<tbody>";
 			while($row = mysqli_fetch_array($result))
 			{
@@ -43,7 +43,8 @@
 					}
 					else
 					{
-						$movieStr .= ",";
+						//$movieStr .= ",";
+						$movieStr .= "<br>";
 						$movieStr .= $row_Movie['name'];
 
 					}
@@ -54,7 +55,7 @@
 				}
 				if($haveMovie == true)
 				{
-					$finalStr .= "<tr><td>{$row['name']}</td><td>{$row['gender']}</td><td>{$row['countryName']}</td><td>{$movieStr}</td></tr>\n";
+					$finalStr .= "<tr><td><input style=\"width:40px; height:40px\" type=\"button\" name=\"{$row['id']}\" value=\"刪除\" onclick=\"deleteRow(this)\"></td><td>{$row['name']}</td><td>{$row['gender']}</td><td>{$row['countryName']}</td><td>{$movieStr}</td></tr>\n";
 				}
 				
 			}

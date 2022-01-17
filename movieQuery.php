@@ -5,7 +5,7 @@
 		$dbuser ='root';
 		$dbpassword = '';
 		$dbname = 'moviedatabase';
-		$link = mysqli_connect($host,$dbuser,$dbpassword,$dbname);
+		$link = mysqli_connect($host,$dbuser,$dbpassword,$dbname); 
 		$a=array($_POST["att1"],$_POST["att1"],$_POST["att2"],$_POST["att3"],$_POST["att4"],$_POST["att5"],$_POST["att6"],$_POST["att7"],$_POST["att8"],$_POST["att9"],$_POST["att10"],$_POST["att11"],$_POST["att12"],$_POST["att13"],$_POST["att14"],$_POST["att15"]);
 
 		if($a[2] == "")
@@ -40,7 +40,6 @@
 		{
 			$a[10] = "2147483647";
 		}
-
 		
 		$sql = "with
 		t1 as (select * from movies where name like '%{$a[1]}%' and length between {$a[2]} and {$a[3]} and type like '%{$a[4]}%' and age_limit >= {$a[8]} and budget between {$a[9]} and {$a[10]} and release_date >= {$a[5]}),
@@ -55,7 +54,7 @@
 		if($link)
 		{
 			$result = mysqli_query($link,$sql) or die("Bad query : $sql");
-			$finalStr .= "<table><thead><tr><th>電影名稱</th><th>類型</th><th>導演</th><th>發行國家</th><th>觀看年齡</th><th>預算</th><th>上映年份</th><th>時長</th><th>評分</th><th>獎項</th></tr></thead>";
+			$finalStr .= "<table><thead><tr style='background-color:#619af5;'><th>電影名稱</th><th>類型</th><th>導演</th><th>發行國家</th><th>觀看年齡</th><th>預算</th><th>上映年份</th><th>時長</th><th>評分</th><th>獎項</th></tr></thead>";
 			$finalStr .= "<tbody>";
 			while($row = mysqli_fetch_array($result))
 			{
@@ -86,7 +85,8 @@
 						}
 						else
 						{
-							$awardStr .= ",";
+							//$awardStr .= ",";
+							$awardStr .= "<br>";
 							$awardStr .= $row_Award['awardName'];
 
 						}
