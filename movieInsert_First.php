@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <?php
 	include_once("check.php");
-	require_once ("actorQuery.php");
+	require_once ("movieInsertFunction.php");
 	include_once("others/header.html");
 	include_once("others/menuOperations.php");
-	
 ?>
 <html>
   <head>
@@ -13,49 +12,52 @@
 	<link type="text/css" href="css/style.css?v=<?time()?>" rel="stylesheet">
   </head>
   <body>
-	
-  		<script>
-			function deleteRow(o) 
-			{
-				
-				var myVar = o.name;
-				$.ajax({
-					url: "actorDelete.php",
-					type: "POST",
-					data:{"deleteID":myVar}
-					}).done(function(data) {
-
-				});
-				
-				var p=o.parentNode.parentNode;
-				p.parentNode.removeChild(p);
-				
-			}
-		</script>
 
 	<div style="position:absolute; top:30vh;" class = "flex">
 		<!-- 查詢-->
 		
 		<div align="center" id="searchTable" >
-			<form action="actorFind_First.php" method="post" id="actorTableButton">
+			<form action="movieInsert_First.php" method="post" id="movieTableButton">
 				<div class="display: inline;">
-					<table>
-						<tr>
+					<table style="width: 40vw">
+					<tr><th style="width: 20vw">電影名稱:</th>
+					<th><input placeholder="請輸入電影名稱" name="insert_movie_att1" style = "width:150px;height:20px"></th></tr>
+					<tr><th style="width: 20vw">類型:</th>
 					<th>
-					演員名子:
-					<input placeholder="請輸入演員名子" name="actor_att1" style = "width:150px;height:20px" value="<?php if(isset($_POST['actor_att1'])) echo $_POST["actor_att1"]; ?>"></th><th>
-					演過的電影:
-					<input placeholder="請輸入演過的電影" name="actor_att2" style = "width:150px;height:20px" value="<?php if(isset($_POST['actor_att2'])) echo $_POST["actor_att2"]; ?>" ></th><th>
-					性別:
-					<select name="actor_att3">
-						<option value="" selected>不限</option>
-						<option value="M">male</option>
-						<option value="F">female</option>
-					</select></th><th>
-					國籍:
-					<select name="actor_att4" style = "width:150px;height:20px">
-						<option value="" selected>不限</option>
-						<option value="USA">USA</option>
+					<select name="insert_movie_att2">
+						<option value="Action" selected>Action</option>
+						<option value="Drama">Drama</option>
+						<option value="Crime">Crime</option>
+						<option value="Fantasy">Fantasy</option>
+						<option value="Adventure">Adventure</option>
+						<option value="Sci-Fi">Sci-Fi</option>
+						<option value="Biography">Biography</option>
+						<option value="Comedy">Comedy</option>
+						<option value="War">War</option>
+						<option value="Horror">Horror</option>
+						<option value="Mystery">Mystery</option>
+						<option value="Romance">Romance</option>
+						<option value="Thriller">Thriller</option>
+						<option value="Western">Western</option>
+						<option value="Disaster">Disaster</option>
+						<option value="Psychological">Psychological</option>
+						<option value="Detective">Detective</option>
+						<option value="Documentary">Documentary</option>
+						<option value="Martial">Martial</option>
+						<option value="Musicals">Musicals</option>
+						<option value="Gangster">Gangster</option>
+						<option value="Epics">Epics</option>
+						<option value="Historical">Historical</option>
+						<option value="Sports">Sports</option>
+					</select>
+					</th></tr>
+					<tr><th style="width: 20vw">導演名字:</th>
+					<th><input placeholder="請輸入導演名字" name="insert_movie_att3" style = "width:150px;height:20px"></th></tr>
+
+					<tr><th style="width: 20vw">發行國家:</th>
+					<th>
+					<select name="insert_movie_att4"  style = "width:150px;height:20px">
+						<option value="USA" selected>USA</option>
 						<option value="UK">UK</option>
 						<option value="Japan">Japan</option>
 						<option value="South Korea">South Korea</option>
@@ -155,21 +157,40 @@
 						<option value="Zimbabwe">Zimbabwe</option>
 						<option value="Tunisia">Tunisia</option>
 						<option value="Turkey">Turkey</option>
-					</select></th>
+					</select>
+					</th></tr>
+
+					<tr><th style="width: 20vw">年齡限制:</th>
+					<th>
+					<select name="insert_movie_att5">
+						<option value="0" selected>0</option>
+						<option value="6">6</option>
+						<option value="13">13</option>
+						<option value="17">17</option>
+					</select>
+					</th></tr>
+
+					<tr><th style="width: 20vw">預算:</th>
+					<th><input placeholder="請輸入預算" name="insert_movie_att6" style = "width:150px;height:20px"></th></tr>
+
+					<tr><th style="width: 20vw">上映年份:</th>
+					<th><input placeholder="請輸入上映年份" name="insert_movie_att7" style = "width:150px;height:20px"></th></tr>
+
+					<tr><th style="width: 20vw">電影時長:</th>
+					<th><input placeholder="請輸入電影時長(分鐘)" name="insert_movie_att8" style = "width:150px;height:20px"></th></tr>
+
+					<tr><th colspan=2><input type="submit" name="Search" value="新增電影資料"></th></tr>
+					</table>
 				</div>
-				<th style="padding: 3px;">
-				<input type="submit" name="Search" value="搜尋" ></th>
-				</tr>
-				</table>
 			</form>
 		</div>
 
 		<br></br>
 		<!--結果表格-->
 		<div align="center" id="myTable">
-			<?php 
+		<?php 
 				if(isset($_POST['Search'])){
-					echo OutputActorContent(); 
+					echo InsertMovieContent(); 
 				}
 				
 			?>

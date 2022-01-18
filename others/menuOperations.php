@@ -59,7 +59,7 @@
               window.location.href = "movieFind_First.php";
             }
             if(this.id == 2){
-              window.location.href = "movieFind_First.php";
+              window.location.href = "movieInsert_First.php";
             }
           })
 

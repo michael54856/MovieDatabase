@@ -40,6 +40,42 @@
 		{
 			$a[10] = "2147483647";
 		}
+
+		if(ctype_digit($a[2])== false)
+		{
+			echo "時長請輸入正整數";
+			return "";
+		}
+		if(ctype_digit($a[3])== false)
+		{
+			echo "時長請輸入正整數";
+			return "";
+		}
+		if(ctype_digit($a[5])== false)
+		{
+			echo "上映年份請輸入正整數";
+			return "";
+		}
+		if(ctype_digit($a[6])== false)
+		{
+			echo "評分請輸入正整數";
+			return "";
+		}
+		if(ctype_digit($a[7])== false)
+		{
+			echo "評分請輸入正整數";
+			return "";
+		}
+		if(ctype_digit($a[9])== false)
+		{
+			echo "預算請輸入正整數";
+			return "";
+		}
+		if(ctype_digit($a[10])== false)
+		{
+			echo "預算請輸入正整數";
+			return "";
+		}
 		
 		$sql = "with
 		t1 as (select * from movies where name like '%{$a[1]}%' and length between {$a[2]} and {$a[3]} and type like '%{$a[4]}%' and age_limit >= {$a[8]} and budget between {$a[9]} and {$a[10]} and release_date >= {$a[5]}),
@@ -54,13 +90,17 @@
 		if($link)
 		{
 			$result = mysqli_query($link,$sql) or die("Bad query : $sql");
-			$finalStr .= "<table><thead><tr style='background-color:#619af5;'><th>電影名稱</th><th>類型</th><th>導演</th><th>發行國家</th><th>觀看年齡</th><th>預算</th><th>上映年份</th><th>時長</th><th>評分</th><th>獎項</th></tr></thead>";
+			$finalStr .= "<table><thead><tr style='background-color:#619af5;'><th style=\"width: 4vw\">刪除</th><th>電影名稱</th><th>類型</th><th>導演</th><th>發行國家</th><th>觀看年齡</th><th>預算</th><th>上映年份</th><th>時長</th><th>評分</th><th>獎項</th></tr></thead>";
 			$finalStr .= "<tbody>";
 			while($row = mysqli_fetch_array($result))
 			{
 				$sql_2 = "SELECT actors.name as name FROM actors,castings WHERE castings.movie_id = {$row['id']} and castings.actor_id = actors.id;";
 				$result_Actor = mysqli_query($link,$sql_2) or die("Bad query : $sql_2");
 				$haveActor = false;
+				if($a[14] == "")
+				{
+					$haveActor = true;
+				}
 				while($row_Actor = mysqli_fetch_array($result_Actor))
 				{
 					if(strpos($row_Actor['name'], $a[14]) !== false)
@@ -74,6 +114,10 @@
 					$awardStr = "";
 					$firstAward = true;
 					$haveAward = false;
+					if($a[15] == "")
+					{
+						$haveAward = true;
+					}
 					$sql_3 = "SELECT awardName FROM awards WHERE movie_id = {$row['id']}";
 					$result_Award = mysqli_query($link,$sql_3) or die("Bad query : $sql_3");
 					while($row_Award = mysqli_fetch_array($result_Award))
@@ -104,7 +148,7 @@
 						$Rate = round($Rate, 2);
 						if($Rate >= $a[6] && $Rate <= $a[7])
 						{
-							$finalStr .= "<tr><td>{$row['name']}</td><td>{$row['type']}</td><td>{$row['directorName']}</td><td>{$row['countryName']}</td><td>{$row['age_limit']}</td><td>{$row['budget']}</td><td>{$row['release_date']}</td><td>{$row['length']}</td><td>{$Rate}</td><td>{$awardStr}</td></tr>\n";
+							$finalStr .= "<tr><td><input style=\"width:40px; height:40px\" type=\"button\" name=\"{$row['id']}\" value=\"刪除\" onclick=\"deleteRow(this)\"></td><td>{$row['name']}</td><td>{$row['type']}</td><td>{$row['directorName']}</td><td>{$row['countryName']}</td><td>{$row['age_limit']}</td><td>{$row['budget']}</td><td>{$row['release_date']}</td><td>{$row['length']}</td><td>{$Rate}</td><td>{$awardStr}</td></tr>\n";
 						}
 						
 					}

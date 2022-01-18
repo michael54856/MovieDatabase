@@ -39,7 +39,7 @@
         </style>
     </head>
 
-    <body>
+    <body background="movieBackground.jpg">
 
     <?php
  // 啟用交談期
