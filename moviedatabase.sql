@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2022-01-14 13:47:12
+-- 產生時間： 2022-01-19 10:10:55
 -- 伺服器版本： 10.4.22-MariaDB
 -- PHP 版本： 8.1.0
 
@@ -139,10 +139,11 @@ INSERT INTO `actors` (`id`, `name`, `gender`, `nationality_id`) VALUES
 (98, 'Gil Bellows', 'M', 1),
 (99, 'Mark Rolston', 'M', 1),
 (100, 'James Whitmore', 'M', 1),
-(101, 'test_actor', 'F', 14),
-(102, 'test_actor_2', 'M', 3),
-(103, 'test_actor_3', 'F', 1),
-(104, 'test_actor_4', 'M', 8);
+(105, 'ssdfqwe', 'M', 1),
+(106, 'Nana Mori', 'M', 3),
+(107, 'asdqwe', 'M', 3),
+(108, 'test_actor_4', 'F', 3),
+(110, 'alcohol', 'M', 90);
 
 -- --------------------------------------------------------
 
@@ -162,11 +163,8 @@ CREATE TABLE `awards` (
 
 INSERT INTO `awards` (`id`, `movie_id`, `awardName`) VALUES
 (1, 1, 'bad Screenplay'),
-(2, 2, 'Cole director'),
-(3, 3, 'soso Cinematography'),
 (4, 4, 'Silver Ensemble Performance'),
 (5, 5, 'Kanye Performance'),
-(6, 6, 'Silver Cinematography'),
 (7, 7, 'Cole Art Direction'),
 (8, 8, 'good Art Direction'),
 (9, 9, 'Kanye Art Direction'),
@@ -189,10 +187,6 @@ INSERT INTO `awards` (`id`, `movie_id`, `awardName`) VALUES
 (26, 26, 'bad Art Direction'),
 (27, 27, 'Cole Ensemble Performance'),
 (28, 28, 'bad movie'),
-(29, 29, 'Kanye Ensemble Performance'),
-(30, 30, 'Best Cinematography'),
-(31, 31, 'Gold Ensemble Performance'),
-(32, 32, 'soso movie'),
 (33, 33, 'Silver Screenplay'),
 (34, 34, 'Gold movie'),
 (35, 35, 'Roger Ebert director'),
@@ -221,7 +215,6 @@ INSERT INTO `awards` (`id`, `movie_id`, `awardName`) VALUES
 (58, 58, 'Roger Ebert Performance'),
 (59, 59, 'Drake Ensemble Performance'),
 (60, 60, 'Cole Cinematography'),
-(61, 61, 'Kanye Cinematography'),
 (62, 62, 'Gold Performance'),
 (63, 63, 'Gold Actor'),
 (64, 64, 'Drake Cinematography'),
@@ -248,7 +241,6 @@ INSERT INTO `awards` (`id`, `movie_id`, `awardName`) VALUES
 (85, 85, 'unreal Actress'),
 (86, 86, 'soso director'),
 (87, 87, 'Roger Ebert Actress'),
-(88, 88, 'Roger Ebert Cinematography'),
 (89, 89, 'Cole movie'),
 (90, 90, 'bad Cinematography'),
 (91, 91, 'Cole Sound'),
@@ -259,14 +251,10 @@ INSERT INTO `awards` (`id`, `movie_id`, `awardName`) VALUES
 (96, 96, 'Kanye Sound'),
 (97, 97, 'soso Actress'),
 (98, 98, 'Gold director'),
-(99, 99, 'bad Actress'),
 (100, 100, 'Silver director'),
 (101, 1, 'happy Ensemble Performance'),
-(102, 2, 'happy Sound'),
-(103, 3, 'ugly Ensemble Performance'),
 (104, 4, 'lil Performance'),
 (105, 5, 'fantasic Cinematography'),
-(106, 6, 'qq Ensemble Performance'),
 (107, 7, 'jj Art Direction'),
 (108, 8, 'fantasic director'),
 (109, 9, 'naughty Actress'),
@@ -289,9 +277,6 @@ INSERT INTO `awards` (`id`, `movie_id`, `awardName`) VALUES
 (126, 26, 'big Ensemble Performance'),
 (127, 27, 'happy Cinematography'),
 (128, 28, 'sad Art Direction'),
-(129, 29, 'fantasic Sound'),
-(130, 30, 'happy director'),
-(131, 31, 'sad director'),
 (132, 32, 'qq Actor'),
 (133, 33, 'qq Performance'),
 (134, 34, 'big Cinematography'),
@@ -321,7 +306,6 @@ INSERT INTO `awards` (`id`, `movie_id`, `awardName`) VALUES
 (158, 58, 'beautiful Actor'),
 (159, 59, 'naughty Actor'),
 (160, 60, 'rock director'),
-(161, 61, 'sad Performance'),
 (162, 62, 'happy Performance'),
 (163, 63, 'qq Art Direction'),
 (164, 64, 'jj Ensemble Performance'),
@@ -348,7 +332,6 @@ INSERT INTO `awards` (`id`, `movie_id`, `awardName`) VALUES
 (185, 85, 'lil Ensemble Performance'),
 (186, 86, 'jj Screenplay'),
 (187, 87, 'big Performance'),
-(188, 88, 'happy Art Direction'),
 (189, 89, 'rock Sound'),
 (190, 90, 'naughty Ensemble Performance'),
 (191, 91, 'beautiful Actress'),
@@ -359,8 +342,9 @@ INSERT INTO `awards` (`id`, `movie_id`, `awardName`) VALUES
 (196, 96, 'ugly Screenplay'),
 (197, 97, 'rock movie'),
 (198, 98, 'sad Actor'),
-(199, 99, 'lil Cinematography'),
-(200, 100, 'rock Art Direction');
+(201, 100, 'damn big audio'),
+(205, 6, 'Silver Cinematography'),
+(206, 6, 'test award 5');
 
 -- --------------------------------------------------------
 
@@ -379,12 +363,7 @@ CREATE TABLE `castings` (
 --
 
 INSERT INTO `castings` (`id`, `movie_id`, `actor_id`) VALUES
-(1, 1, 10),
 (2, 1, 2),
-(3, 2, 1),
-(4, 2, 3),
-(5, 3, 1),
-(6, 3, 4),
 (7, 4, 5),
 (8, 5, 6),
 (9, 6, 7),
@@ -415,12 +394,6 @@ INSERT INTO `castings` (`id`, `movie_id`, `actor_id`) VALUES
 (34, 27, 18),
 (35, 28, 17),
 (36, 28, 18),
-(37, 29, 19),
-(38, 29, 20),
-(39, 31, 19),
-(40, 30, 20),
-(41, 30, 19),
-(42, 31, 20),
 (43, 32, 21),
 (44, 33, 21),
 (45, 34, 11),
@@ -439,7 +412,6 @@ INSERT INTO `castings` (`id`, `movie_id`, `actor_id`) VALUES
 (58, 58, 43),
 (59, 59, 44),
 (60, 60, 45),
-(61, 61, 46),
 (62, 62, 47),
 (63, 63, 48),
 (64, 64, 49),
@@ -467,7 +439,6 @@ INSERT INTO `castings` (`id`, `movie_id`, `actor_id`) VALUES
 (86, 85, 65),
 (87, 86, 39),
 (88, 87, 66),
-(89, 88, 67),
 (90, 89, 39),
 (91, 89, 68),
 (92, 89, 69),
@@ -514,7 +485,6 @@ INSERT INTO `castings` (`id`, `movie_id`, `actor_id`) VALUES
 (133, 7, 8),
 (134, 97, 75),
 (135, 98, 76),
-(136, 99, 77),
 (137, 100, 78),
 (138, 14, 79),
 (139, 14, 80),
@@ -537,7 +507,10 @@ INSERT INTO `castings` (`id`, `movie_id`, `actor_id`) VALUES
 (156, 1, 97),
 (157, 1, 98),
 (158, 1, 99),
-(159, 1, 100);
+(159, 1, 100),
+(162, 8, 110),
+(164, 8, 107),
+(165, 1, 108);
 
 -- --------------------------------------------------------
 
@@ -675,7 +648,6 @@ CREATE TABLE `directors` (
 
 INSERT INTO `directors` (`id`, `name`, `gender`, `studio_id`) VALUES
 (1, 'Frank Darabont', 'M', 1),
-(2, 'David Fincher', 'M', 2),
 (3, 'Francis Ford Coppola', 'M', 3),
 (4, 'Clint Eastwood', 'M', 4),
 (5, 'Christopher Nolan', 'M', 3),
@@ -692,7 +664,6 @@ INSERT INTO `directors` (`id`, `name`, `gender`, `studio_id`) VALUES
 (16, 'Len Wiseman', 'M', 8),
 (17, 'John Moore', 'M', 8),
 (18, 'Jon Watts', 'M', 11),
-(19, 'Sam Raimi', 'M', 11),
 (20, 'Marc Webb', 'M', 11),
 (21, 'Lana Wachowski', 'F', 3),
 (22, 'Chad Stahelski', 'M', 12),
@@ -727,7 +698,6 @@ INSERT INTO `directors` (`id`, `name`, `gender`, `studio_id`) VALUES
 (51, 'Shane Black', 'M', 11),
 (52, 'Louis Leterrier', 'M', 11),
 (53, 'Kenneth Branagh', 'M', 11),
-(54, 'Alan Taylor', 'M', 11),
 (55, 'Taika Waititi', 'M', 11),
 (56, 'Joe Russo', 'M', 11),
 (57, 'James Gunn', 'M', 11),
@@ -775,8 +745,7 @@ INSERT INTO `directors` (`id`, `name`, `gender`, `studio_id`) VALUES
 (99, 'Cary Joji Fukunaga', 'M', 6),
 (100, 'Michael C. Hall', 'M', 6),
 (101, 'Ron Howard', 'M', 6),
-(102, 'testDirector', 'M', 19),
-(103, 'testDirector2', 'F', 13);
+(102, 'testDirector', 'M', 19);
 
 -- --------------------------------------------------------
 
@@ -802,8 +771,6 @@ CREATE TABLE `movies` (
 
 INSERT INTO `movies` (`id`, `name`, `type`, `director_id`, `country_id`, `age_limit`, `budget`, `release_date`, `length`) VALUES
 (1, 'The Shawshank Redemption', 'Drama', 1, 1, 13, 25000000, 1994, 142),
-(2, 'Se7en', 'Crime', 2, 1, 17, 33000000, 1995, 127),
-(3, 'Invictus', 'Biography', 3, 1, 13, 60000000, 2010, 134),
 (4, 'The Godfather', 'Crime', 3, 1, 17, 6000000, 1972, 175),
 (5, 'The Godfather: Part II', 'Crime', 3, 1, 17, 6000000, 1974, 202),
 (6, 'The Dark Knight', 'Adventure', 1, 3, 13, 185000000, 2008, 152),
@@ -829,9 +796,6 @@ INSERT INTO `movies` (`id`, `name`, `type`, `director_id`, `country_id`, `age_li
 (26, 'Spider-Man: No Way Home', 'Action', 18, 1, 13, 200000000, 2021, 148),
 (27, 'Spider-Man: Far from Home', 'Action', 18, 1, 13, 160000000, 2019, 129),
 (28, 'Spider-Man: Homecoming', 'Action', 18, 1, 13, 175000000, 2017, 133),
-(29, 'Spider-Man', 'Action', 19, 1, 13, 139000000, 2002, 121),
-(30, 'Spider-Man 2', 'Action', 19, 1, 13, 200000000, 2004, 127),
-(31, 'Spider-Man 3', 'Action', 19, 1, 13, 258000000, 2007, 139),
 (32, 'The Amazing Spider-Man', 'Action', 20, 1, 13, 230000000, 2012, 136),
 (33, 'The Amazing Spider-Man 2', 'Action', 21, 1, 13, 200000000, 2014, 142),
 (34, 'Inception', 'Action', 5, 1, 13, 160000000, 2010, 148),
@@ -861,7 +825,6 @@ INSERT INTO `movies` (`id`, `name`, `type`, `director_id`, `country_id`, `age_li
 (58, 'The Green Mile', 'Fantasy', 1, 1, 17, 60000000, 1999, 198),
 (59, 'Gisaengchung', 'Comedy', 29, 4, 13, 114000000, 2019, 132),
 (60, 'Leon', 'Action', 31, 1, 13, 115000000, 1994, 110),
-(61, 'Seppuku', 'Action', 32, 3, 0, 1500000, 1962, 133),
 (62, 'The Pianist', 'War', 33, 2, 17, 35000000, 2002, 150),
 (63, 'Terminator 2: Judgment Day', 'Action', 10, 1, 13, 102000000, 1991, 137),
 (64, 'Back to the Future', 'Comedy', 34, 1, 6, 19000000, 1985, 116),
@@ -888,7 +851,6 @@ INSERT INTO `movies` (`id`, `name`, `type`, `director_id`, `country_id`, `age_li
 (85, 'Kimi no na wa', 'Fantasy', 47, 3, 0, 370000000, 2016, 106),
 (86, 'Koto no ha no niwa', 'Drama', 47, 3, 13, 418256, 2013, 46),
 (87, 'Tenki no ko', 'Fantasy', 47, 3, 0, 11100000, 2019, 112),
-(88, 'Byosoku 5 senchimetoru', 'Drama', 47, 3, 6, 5000000, 2007, 63),
 (89, 'Koe no katachi', 'Drama', 48, 3, 0, 644391, 2016, 130),
 (90, 'The Manchurian Candidate', 'Drama', 31, 1, 13, 2200000, 1962, 126),
 (91, 'Le sens de la fete', 'Drama', 44, 1, 0, 14850000, 2017, 117),
@@ -899,8 +861,9 @@ INSERT INTO `movies` (`id`, `name`, `type`, `director_id`, `country_id`, `age_li
 (96, 'La La Land', 'Drama', 41, 1, 0, 30000000, 2016, 128),
 (97, '10 Cloverfield Lane', 'Drama', 41, 1, 13, 15000000, 2016, 103),
 (98, 'First Man', 'Drama', 41, 1, 0, 59000000, 2018, 141),
-(99, 'The Adventures of Robin Hood', 'Adventure', 45, 1, 6, 1900000, 1938, 102),
-(100, 'White Christmas', 'Comedy', 45, 1, 0, 928298, 1954, 120);
+(100, 'White Christmas', 'Comedy', 45, 1, 0, 928298, 1954, 120),
+(104, 'testMovie', 'Horror', 66, 19, 0, 20000000, 2000, 200),
+(105, 'test_movie_5', 'Action', 47, 1, 0, 20000000, 2021, 100);
 
 -- --------------------------------------------------------
 
@@ -921,8 +884,6 @@ CREATE TABLE `reviews` (
 
 INSERT INTO `reviews` (`id`, `movie_id`, `rate`, `reviewerName`) VALUES
 (1, 1, 9.2, 'Jose Caro'),
-(2, 2, 5.5, 'Castillo Eugene'),
-(3, 3, 8.5, 'Arnoldo John'),
 (4, 4, 8.4, 'Palmer Flores'),
 (5, 5, 7.7, 'Jose Quintero'),
 (6, 6, 5.7, 'Alejandro Hernandez'),
@@ -948,9 +909,6 @@ INSERT INTO `reviews` (`id`, `movie_id`, `rate`, `reviewerName`) VALUES
 (26, 26, 3.8, 'patel Jojo'),
 (27, 27, 8.2, 'Carias Jojo'),
 (28, 28, 2.4, 'Jason Quintero'),
-(29, 29, 2.8, 'Palmer Hernandez'),
-(30, 30, 6.6, 'Jason Eugene'),
-(31, 31, 2.4, 'Joe Banned'),
 (32, 32, 9.8, 'Kenail Curry'),
 (33, 33, 3.8, 'James Berkeley'),
 (34, 34, 1.5, 'Castillo Caro'),
@@ -980,7 +938,6 @@ INSERT INTO `reviews` (`id`, `movie_id`, `rate`, `reviewerName`) VALUES
 (58, 58, 2.5, 'Yoyo Eugene'),
 (59, 59, 9.9, 'Joe Brown'),
 (60, 60, 3.3, 'Kenail Caro'),
-(61, 61, 3.4, 'Kenail Corro'),
 (62, 62, 9.9, 'Joe Jimenez'),
 (63, 63, 5.7, 'Flores Jimenez'),
 (64, 64, 7.9, 'Jason Yulan'),
@@ -1007,7 +964,6 @@ INSERT INTO `reviews` (`id`, `movie_id`, `rate`, `reviewerName`) VALUES
 (85, 85, 3.2, 'Castillo Berkeley'),
 (86, 86, 3.3, 'Jose Loser'),
 (87, 87, 8.6, 'patel Berkeley'),
-(88, 88, 2.8, 'Joe Ken'),
 (89, 89, 2.1, 'Jose Ken'),
 (90, 90, 2.9, 'Yoyo Caro'),
 (91, 91, 6.6, 'Arnoldo Rosales'),
@@ -1018,11 +974,8 @@ INSERT INTO `reviews` (`id`, `movie_id`, `rate`, `reviewerName`) VALUES
 (96, 96, 5.8, 'Alejandro Jimenez'),
 (97, 97, 4.2, 'Jose John'),
 (98, 98, 1.1, 'Juarez John'),
-(99, 99, 2.5, 'Chetanbhai Corro'),
 (100, 100, 3.9, 'patel John'),
 (101, 1, 2.1, 'Lazy Alex'),
-(102, 2, 3.4, 'Fox Banny'),
-(103, 3, 5.9, 'Cohile Zoo'),
 (104, 4, 3.4, 'Hurry Alex'),
 (105, 5, 7.9, 'Ken Root'),
 (106, 6, 3.3, 'Steven Alice'),
@@ -1048,9 +1001,6 @@ INSERT INTO `reviews` (`id`, `movie_id`, `rate`, `reviewerName`) VALUES
 (126, 26, 5.9, 'Cohile Geoge'),
 (127, 27, 2, 'Hurry Amy'),
 (128, 28, 6.9, 'Jeff Robert'),
-(129, 29, 7.6, 'Seven Alice'),
-(130, 30, 4.7, 'Marry Fooly'),
-(131, 31, 1.2, 'Hurry Root'),
 (132, 32, 7.3, 'Steven Zoe'),
 (133, 33, 3.6, 'Keven Alex'),
 (134, 34, 7.3, 'Jeff Geoge'),
@@ -1080,7 +1030,6 @@ INSERT INTO `reviews` (`id`, `movie_id`, `rate`, `reviewerName`) VALUES
 (158, 58, 7.9, 'Seven Amy'),
 (159, 59, 0.6, 'Passy Alex'),
 (160, 60, 8.3, 'Jeff Zoe'),
-(161, 61, 1.8, 'Seven Banny'),
 (162, 62, 2.7, 'Cohile Boots'),
 (163, 63, 5.3, 'Ken Alice'),
 (164, 64, 6.3, 'Fox Alice'),
@@ -1107,7 +1056,6 @@ INSERT INTO `reviews` (`id`, `movie_id`, `rate`, `reviewerName`) VALUES
 (185, 85, 1.4, 'Cohile Alex'),
 (186, 86, 2.8, 'Seven Geoge'),
 (187, 87, 8.8, 'Jeff Amy'),
-(188, 88, 5.9, 'Hurry Carl'),
 (189, 89, 2.5, 'Ducky Amy'),
 (190, 90, 2.4, 'Ducky Boots'),
 (191, 91, 9.7, 'Lazy Zoo'),
@@ -1118,13 +1066,11 @@ INSERT INTO `reviews` (`id`, `movie_id`, `rate`, `reviewerName`) VALUES
 (196, 96, 6.8, 'Kemail Geoge'),
 (197, 97, 5.9, 'Ducky Zoe'),
 (198, 98, 5.3, 'Hart Boots'),
-(199, 99, 5.6, 'Passy Geoge'),
 (200, 100, 0.6, 'Seven Robert'),
 (201, 20, 8.3, 'testMan'),
 (202, 22, 2.3, 'testMan'),
 (203, 17, 6.3, 'testMan'),
-(204, 73, 7.3, 'testMan'),
-(205, 1, 8, 'tesyGuy123');
+(204, 73, 7.3, 'testMan');
 
 -- --------------------------------------------------------
 
@@ -1143,7 +1089,6 @@ CREATE TABLE `studios` (
 
 INSERT INTO `studios` (`id`, `name`) VALUES
 (1, 'Castle Rock Entertainment'),
-(2, 'Cecchi Gori Pictures'),
 (3, 'Warner Bros'),
 (4, 'Paramount Pictures'),
 (5, 'Orion'),
@@ -1251,19 +1196,23 @@ INSERT INTO `studios` (`id`, `name`) VALUES
 -- 資料表索引 `actors`
 --
 ALTER TABLE `actors`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `foreignKey5` (`nationality_id`);
 
 --
 -- 資料表索引 `awards`
 --
 ALTER TABLE `awards`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `foreignKey2` (`movie_id`);
 
 --
 -- 資料表索引 `castings`
 --
 ALTER TABLE `castings`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `foreignKey3` (`actor_id`),
+  ADD KEY `foreignKey4` (`movie_id`);
 
 --
 -- 資料表索引 `countries`
@@ -1275,19 +1224,23 @@ ALTER TABLE `countries`
 -- 資料表索引 `directors`
 --
 ALTER TABLE `directors`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `foreignKey6` (`studio_id`);
 
 --
 -- 資料表索引 `movies`
 --
 ALTER TABLE `movies`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `foreignKey7` (`director_id`),
+  ADD KEY `foreignKey8` (`country_id`);
 
 --
 -- 資料表索引 `reviews`
 --
 ALTER TABLE `reviews`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `foreignKey1` (`movie_id`);
 
 --
 -- 資料表索引 `studios`
@@ -1303,19 +1256,19 @@ ALTER TABLE `studios`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `actors`
 --
 ALTER TABLE `actors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `awards`
 --
 ALTER TABLE `awards`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=201;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=207;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `castings`
 --
 ALTER TABLE `castings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=160;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=166;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `countries`
@@ -1327,25 +1280,67 @@ ALTER TABLE `countries`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `directors`
 --
 ALTER TABLE `directors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `movies`
 --
 ALTER TABLE `movies`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=206;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=220;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `studios`
 --
 ALTER TABLE `studios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=115;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
+
+--
+-- 已傾印資料表的限制式
+--
+
+--
+-- 資料表的限制式 `actors`
+--
+ALTER TABLE `actors`
+  ADD CONSTRAINT `foreignKey5` FOREIGN KEY (`nationality_id`) REFERENCES `countries` (`id`);
+
+--
+-- 資料表的限制式 `awards`
+--
+ALTER TABLE `awards`
+  ADD CONSTRAINT `foreignKey2` FOREIGN KEY (`movie_id`) REFERENCES `movies` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- 資料表的限制式 `castings`
+--
+ALTER TABLE `castings`
+  ADD CONSTRAINT `foreignKey3` FOREIGN KEY (`actor_id`) REFERENCES `actors` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `foreignKey4` FOREIGN KEY (`movie_id`) REFERENCES `movies` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- 資料表的限制式 `directors`
+--
+ALTER TABLE `directors`
+  ADD CONSTRAINT `foreignKey6` FOREIGN KEY (`studio_id`) REFERENCES `studios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- 資料表的限制式 `movies`
+--
+ALTER TABLE `movies`
+  ADD CONSTRAINT `foreignKey7` FOREIGN KEY (`director_id`) REFERENCES `directors` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `foreignKey8` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- 資料表的限制式 `reviews`
+--
+ALTER TABLE `reviews`
+  ADD CONSTRAINT `foreignKey1` FOREIGN KEY (`movie_id`) REFERENCES `movies` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
