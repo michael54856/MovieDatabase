@@ -26,11 +26,11 @@
 尋找Marvel工作室所拍攝，USA所發行，在2010年後上映，不超過150分鐘，平均評分在5~8之間的電影
 ![](https://github.com/michael54856/MovieDatabase/blob/main/ReadmeImage/query1.png)
 ## 查詢範例_2:
-尋找Marvel工作室所拍攝，USA所發行，在2010年後上映，不超過150分鐘，平均評分在5~8之間的電影
+尋找John Moore所執導的電影，而且要是動作片，而且需要17歲以上才能觀看，並且需要獲得Good Sound這個獎項的電影 
 ![](https://github.com/michael54856/MovieDatabase/blob/main/ReadmeImage/query2.png)
 
 ## 查詢範例_3:
-尋找Marvel工作室所拍攝，USA所發行，在2010年後上映，不超過150分鐘，平均評分在5~8之間的電影
+我想查詢有哪個導演是Marvel工作室的，而且性別是男性，而且還有執導過蜘蛛人的相關電影(輸入spider去找關聯)，最終會輸出有哪些導演，並且提供其性別、工作室與所以執導過的電影
 ![](https://github.com/michael54856/MovieDatabase/blob/main/ReadmeImage/query3.png)
 
 ## 新增電影範例:
