@@ -16,26 +16,25 @@
 7. 獎項
 來進行查詢、新增及刪除
 
-![](https://github.com/michael54856/Drinks-Vending-Machine/blob/main/Image/front.png)
+![](https://github.com/michael54856/MovieDatabase/blob/main/ReadmeImage/FrontPage.png)
 
 ## Schema
-![](https://github.com/michael54856/Drinks-Vending-Machine/blob/main/Image/front.png)
+![](https://github.com/michael54856/MovieDatabase/blob/main/ReadmeImage/schema.png)
 
 
 ## 查詢範例_1:
 尋找Marvel工作室所拍攝，USA所發行，在2010年後上映，不超過150分鐘，平均評分在5~8之間的電影
-![](https://github.com/michael54856/Drinks-Vending-Machine/blob/main/Image/front.png)
-
+![](https://github.com/michael54856/MovieDatabase/blob/main/ReadmeImage/query1.png)
 ## 查詢範例_2:
 尋找Marvel工作室所拍攝，USA所發行，在2010年後上映，不超過150分鐘，平均評分在5~8之間的電影
-![](https://github.com/michael54856/Drinks-Vending-Machine/blob/main/Image/front.png)
+![](https://github.com/michael54856/MovieDatabase/blob/main/ReadmeImage/query2.png)
 
 ## 查詢範例_3:
 尋找Marvel工作室所拍攝，USA所發行，在2010年後上映，不超過150分鐘，平均評分在5~8之間的電影
-![](https://github.com/michael54856/Drinks-Vending-Machine/blob/main/Image/front.png)
+![](https://github.com/michael54856/MovieDatabase/blob/main/ReadmeImage/query3.png)
 
 ## 新增電影範例:
-![](https://github.com/michael54856/Drinks-Vending-Machine/blob/main/Image/front.png)
+![](https://github.com/michael54856/MovieDatabase/blob/main/ReadmeImage/insert.png)
 
 
 其他詳細說明可以查看description.docx
